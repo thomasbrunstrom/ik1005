@@ -1,0 +1,19 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "description": "Examples for nodejs",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server.js"
+  },
+  "author": "tbn",
+  "license": "ISC"
+}
