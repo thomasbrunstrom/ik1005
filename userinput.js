@@ -7,7 +7,6 @@ standardInput.on('data', (data) => {
         process.exit();
     }
     else {
-        console.log(`Hej ${data.replace('\n', '')}, 
-            trevligt att träffas`);
+        console.log(`Hej ${data.replace('\n', '')}, trevligt att träffas`);
     }
 });
