@@ -22,13 +22,18 @@ const doQuery = async () => {
     try {
         const db = await dbCon;
         const users = await db.all('SELECT username, id FROM users ORDER BY username ASC');
-        console.log(users);
+        return users;
     }
     catch(error) {
         console.log('Något gick fel.');
         console.log(error);
-
+        return error;
     }
 };
 doQueryCB();
 doQuery();
+
+const myFunction = async() => {
+
+};
+module.exports = { func: myFunction };
