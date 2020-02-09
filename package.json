@@ -4,8 +4,10 @@
   "description": "Examples for nodejs",
   "main": "app.js",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "express": "^4.17.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
