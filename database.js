@@ -30,8 +30,6 @@ const doQuery = async () => {
         return error;
     }
 };
-doQueryCB();
-doQuery();
 
 const myFunction = async() => {
 
