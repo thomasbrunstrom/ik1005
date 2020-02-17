@@ -1,9 +1,11 @@
 const Promise = require('bluebird');
 const sqlite = require('sqlite');
-const dbCon = sqlite.open('example.db', {Promise});
+const settings = require('./settings.json');
+
+const dbCon = sqlite.open(settings.databasefile, {Promise});
 
 const doQueryCB = () => {
-    dbCon.then(con => {
+    dbCon.then((con) => {
         con.all('SELECT username, id FROM users ORDER BY username ASC')
             .then((rows) => {
                 console.log(rows);
@@ -21,17 +23,22 @@ const doQueryCB = () => {
 const doQuery = async () => {
     try {
         const db = await dbCon;
-        const users = await db.all('SELECT username, id FROM users ORDER BY username ASC');
+        const users = await db.all('SELECT username, id FROM users2 ORDER BY username ASC');
         return users;
     }
     catch(error) {
-        console.log('Något gick fel.');
-        console.log(error);
-        return error;
+        // console.log('Något gick fel.');
+        // console.log(error);
+        throw new Error(error);
+        //return error;
     }
 };
 
-const myFunction = async() => {
+//doQueryCB();
+//doQuery();
+// const myFunction = async() => {
 
-};
-module.exports = { func: myFunction };
+// };
+// module.exports = { func: myFunction };
+
+module.exports = { getUsers : doQuery };
